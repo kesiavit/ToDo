@@ -5,5 +5,36 @@
 }
 
 :root {
+    --purple-light: #DDD2EF;
+    --purple-base: #9359F3;
+    --purple-dark: #6F3CC3;
+    --green-light: #BFE3D0;
+    --green-base: #479C6E;
+    --green-dark: #2D6C4A;
+    --danger: #C2464D;
+    --bg-color: #F0EDF2;
+    --base-color: #E0DCE4;
+    --font-family: "Inter", sans-serif;
     
+    /* Mobile */
+
+    --subtitle: 600 0.875rem/120% var(--font-family);
+    --font-tag: 800 0.75rem/120% var(--font-family);
+    --font-input: 400 1rem/140% var(--font-family);
+    --text-md: 400 0.875rem/140% var(--font-family);
+    --text-sm: 400 0.75rem/140% var(--font-family);
+
+}
+
+body{
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+}
+
+/* Desktop */
+
+@media (width >= 80rem) {
+    :root {
+    --text-button: 800 0.875rem/140%;
+    }
 }

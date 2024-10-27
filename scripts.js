@@ -15,9 +15,7 @@ form.onsubmit = (event) => {
     }
 
     if (newTask.value.trim().length > 0) {
-        if (emptyDiv) {
-            emptyDiv.remove()
-        }
+        removeEmptyMessage()
 
         TaskAdd(NewTask)
         newTask.value = ""
@@ -76,15 +74,24 @@ TaskList.addEventListener("click", function(event) {
 })
 
 function showEmptyMessage() {
-    const emptyMessage = document.createElement("div")
-    emptyMessage.classList.add("empty", "text-center")
-    emptyMessage.innerHTML = `
-        <img src="./style-guide/list.svg" alt="ícone de uma lista de tarefas.">
-        <br>
-        <div id="menssage">
-            <p id="no-task">Você ainda não tem tarefas cadastradas</p>
-            <p>Crie tarefas e organize seus itens a fazer</p>
-        </div>
-    `
-    tasks.parentNode.insertBefore(emptyMessage, tasks)
+    if (!document.querySelector(".empty")) {
+        const emptyMessage = document.createElement("div")
+        emptyMessage.classList.add("empty", "text-center")
+        emptyMessage.innerHTML = `
+            <img src="./style-guide/list.svg" alt="ícone de uma lista de tarefas.">
+            <br>
+            <div id="menssage">
+                <p id="no-task">Você ainda não tem tarefas cadastradas</p>
+                <p>Crie tarefas e organize seus itens a fazer</p>
+            </div>
+        `
+        tasks.parentNode.insertBefore(emptyMessage, tasks)
+    }
+}
+
+function removeEmptyMessage() {
+    const emptyMessage = document.querySelector(".empty")
+    if (emptyMessage) {
+        emptyMessage.remove()
+    }
 }

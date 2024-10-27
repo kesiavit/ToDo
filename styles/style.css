@@ -181,6 +181,10 @@ main {
         & .check-image {
             background-image: url(../style-guide/check-default.svg);
         }
+
+        .task .check-image:hover {
+            background-image: url(../style-guide/check-hover.svg);
+        }
     }
 
     .delete-image:hover {

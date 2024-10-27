@@ -109,13 +109,15 @@ main {
     }
 
     .task {
+        cursor: pointer;
+        min-height: 3.5rem;
         display: flex;
         gap: 0.5rem;
         align-items: flex-start;
         background-color: #E0DCE4;
         border: 1px #D1CBD7;
         border-radius: 0.5rem;
-        padding: 0.75rem;
+        padding: 1rem;
         font: var(--text-sm);
         color: #262428;
         position: relative;
@@ -129,8 +131,8 @@ main {
         height: 1.5rem;
 
         position: absolute;
-        top: .75rem;
-        left: .75rem;
+        top: 1rem;
+        left: 1rem;
     }
 
     .delete-image {
@@ -140,8 +142,8 @@ main {
         height: 1.5rem;
 
         position: absolute;
-        top: .75rem;
-        right: .75rem;
+        top: 1rem;
+        right: 1rem;
     }
 
     .task:hover {
@@ -174,6 +176,7 @@ main {
 
         text-decoration: line-through;
         color: #6B6572;
+        position: relative;
         
         & .check-image {
             background-image: url(../style-guide/check-default.svg);

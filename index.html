@@ -14,12 +14,12 @@
 <body>
     <div class="background grid">
         <img class="logo" src="./style-guide/Logo.svg" alt="logo da todo">
-        <div class="create-task flex">
-            <input name="new-task" id="new-task" type="text" placeholder="Adicione uma nova tarefa">
-            <button class="btn-create" type="button">
+        <form class="create-task flex">
+            <input name="new-task" id="new-task" required type="text" placeholder="Adicione uma nova tarefa">
+            <button class="btn-create" type="submit">
                 <img src="./style-guide/create.svg" alt="Ícone de adicionar">
             </button>
-        </div>
+        </form>
     </div>
 
     <main class="grid">
@@ -29,44 +29,25 @@
             <p class="done">Concluídas <span>8</span></p>
         </div>
 
-        <!-- <div class="empty text-center">
+        <div class="empty text-center">
             <img src="./style-guide/list.svg" alt="ícone de uma lista de tarefas.">
             <br>
             <div id="menssage">
                 <p id="no-task">Você ainda não tem tarefas cadastradas</p>
                 <p>Crie tarefas e organize seus itens a fazer</p>
             </div>
-        </div> -->
-
-        <div id="tasks">
-            <div class="task">
-                <div class="check-image"></div>
-                <input id="checkbox" type="checkbox"> 
-                <p class="content">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-                <div class="delete-image"></div>
-            </div>
-
-            <div class="task">
-                <div class="check-image"></div>
-                <input id="checkbox" type="checkbox"> 
-                <p class="content">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-                <div class="delete-image"></div>
-            </div>
-
-            <div class="task">
-                <div class="check-image"></div>
-                <input id="checkbox" type="checkbox"> 
-                <p class="content">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-                <div class="delete-image"></div>
-            </div>
-
-            <div class="task">
-                <div class="check-image"></div>
-                <input id="checkbox" type="checkbox"> 
-                <p class="content">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-                <div class="delete-image"></div>
-            </div>
         </div>
+
+        <ul id="tasks">
+            <!-- <li class="task">
+                <div class="check-image"></div>
+                <input id="checkbox" type="checkbox"> 
+                <p class="content">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                <div class="delete-image"></div>
+            </li> -->
+        </ul>
     </main>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

@@ -182,9 +182,11 @@ main {
             background-image: url(../style-guide/check-default.svg);
         }
 
-        .task .check-image:hover {
+        &:hover .check-image {
             background-image: url(../style-guide/check-hover.svg);
+            background-color: #E5E2E9;
         }
+
     }
 
     .delete-image:hover {

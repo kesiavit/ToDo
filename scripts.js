@@ -4,6 +4,10 @@ const tasks = document.getElementById("tasks")
 
 const TaskList = document.querySelector("ul")
 const emptyDiv = document.querySelector(".empty")
+const TasksQuantity = document.getElementById("createdTasks")
+
+const TasksDone = document.getElementById("numberDone")
+const checkbox = document.querySelectorAll('#tasks .task input[type="checkbox"]')
 
 form.onsubmit = (event) => {
     event.preventDefault()
@@ -35,6 +39,8 @@ function TaskAdd(NewTask) {
             checkBox.setAttribute("id", "checkbox")
             checkBox.setAttribute("type", "checkbox")
 
+            checkBox.addEventListener('change', updateDone)
+
             const info = document.createElement("p")
             info.classList.add("content")
             info.textContent = NewTask.newTask
@@ -47,6 +53,10 @@ function TaskAdd(NewTask) {
             TaskList.append(TaskItem)
 
             formClear()
+
+            updateTasks()
+
+            updateDone()
 
         } catch (error) {
             alert("Não foi possível adicionar uma nova tarefa.")
@@ -67,9 +77,12 @@ TaskList.addEventListener("click", function(event) {
 
         item.remove()
 
+        updateTasks()
+        updateDone()
+
         if (TaskList.children.length === 0) {
             showEmptyMessage()
-        }
+        } 
     }
 })
 
@@ -94,4 +107,31 @@ function removeEmptyMessage() {
     if (emptyMessage) {
         emptyMessage.remove()
     }
+}
+
+// Para atualizar a quantidade de tarefas criadas
+
+function updateTasks() {
+    try {
+        const items = TaskList.querySelectorAll('.task')
+    
+        TasksQuantity.textContent = items.length
+
+    } catch (error) {
+        console.log(error)
+        alert("Não foi possível atualizar a quantidade de tarefas criadas.")
+    }
+}
+
+function updateDone() {
+    const checkboxes = document.querySelectorAll('#tasks .task input[type="checkbox"]')
+    let tasksDone = 0
+
+    checkboxes.forEach(box => {
+        if (box.checked) {
+            tasksDone++
+        }
+    })
+
+    TasksDone.textContent = tasksDone
 }
